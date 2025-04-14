@@ -1,6 +1,6 @@
 # 📱 TaskFlow
 
-**TaskFlow** is a modern and lightweight solo task manager application for Android, designed to help you stay organized and productive. TaskFlow syncs tasks using [mockAPI](https://mockapi.io/) to simulate real-world backend behavior.
+**TaskFlow** is a modern and lightweight solo task manager application for Android, designed by XML to help you stay organized and productive. TaskFlow syncs tasks using [mockAPI](https://mockapi.io/) to simulate real-world backend behavior.
 
 ---
 
@@ -21,7 +21,10 @@
 
 ## 🔗 API
 
-The project uses a pre-configured base URL from [mockAPI.io](https://mockapi.io/).  
+The project uses a pre-configured base URL from [mockAPI.io](https://mockapi.io/).
+Endpoints used;
+  1. users
+  2. tasks
 No additional setup is required — clone and run!
 
 ---

@@ -1,0 +1,12 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <style name="Base.Theme.TaskFlow" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/tf_blue</item>
+        <item name="colorSecondary">@color/tf_orange</item>
+        <item name="colorTertiary">@color/white</item>
+        <item name="android:textColorPrimary">@color/tf_gray3</item>
+        <item name="android:textColorSecondary">@color/white</item>
+        <item name="colorSurface">@color/tf_gray</item>
+        <item name="android:statusBarColor">@color/tf_blue</item>
+        <item name="android:windowLightStatusBar">true</item>
+    </style>
+</resources>

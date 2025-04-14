@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        app:cardBackgroundColor="?attr/colorTertiary"
+        app:cardCornerRadius="@dimen/tf_button_corner_radius"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/priority3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:visibility="invisible"
+                app:layout_constraintStart_toEndOf="@+id/priority2"
+                app:layout_constraintTop_toTopOf="@+id/priority1"
+                app:srcCompat="@drawable/ic_priority" />
+
+            <ImageView
+                android:id="@+id/priority2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:visibility="invisible"
+                app:layout_constraintStart_toEndOf="@+id/priority1"
+                app:layout_constraintTop_toTopOf="@+id/priority1"
+                app:srcCompat="@drawable/ic_priority" />
+
+            <RadioButton
+                android:id="@+id/radioButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="24dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textView8"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="24dp"
+                android:fontFamily="@font/inter"
+                android:text="@string/tf_taskCard_text1"
+                android:textColor="?android:attr/textColorPrimary"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/radioButton"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/radioButton"
+                app:layout_constraintTop_toTopOf="@+id/radioButton" />
+
+            <ImageView
+                android:id="@+id/priority1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:paddingBottom="16dp"
+                app:layout_constraintStart_toStartOf="@+id/radioButton"
+                app:layout_constraintTop_toBottomOf="@+id/radioButton"
+                app:srcCompat="@drawable/ic_priority" />
+
+            <TextView
+                android:id="@+id/textView9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="16dp"
+                android:fontFamily="@font/inter"
+                android:text="@string/tf_taskCard_text2"
+                android:textColor="?android:attr/textColorPrimary"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <Button
+                android:id="@+id/button2"
+                style="@style/Widget.Material3.Button.TextButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="0dp"
+                android:text="@string/tf_taskCard_button"
+                android:textColor="?attr/colorPrimary"
+                android:visibility="visible"
+                app:cornerRadius="@dimen/tf_button_corner_radius"
+                app:layout_constraintStart_toStartOf="@+id/priority1"
+                app:layout_constraintTop_toBottomOf="@+id/priority1" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+</androidx.constraintlayout.widget.ConstraintLayout>

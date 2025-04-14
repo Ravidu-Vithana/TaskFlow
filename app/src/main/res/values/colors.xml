@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <color name="tf_blue">#00A1FF</color>
+    <color name="tf_darkBlue">#0062FF</color>
+    <color name="tf_gray">#F3F3F3</color>
+    <color name="tf_gray2">#8D8D8D</color>
+    <color name="tf_gray3">#4E4E4E</color>
+    <color name="tf_orange">#FF7B00</color>
+
+    <color name="tf_night_blue">#51a4d6</color>
+    <color name="tf_night_darkBlue">#3D8EFF</color>
+    <color name="tf_night_gray">#1E1E1E</color>
+    <color name="tf_night_gray2">#5E5E5E</color>
+    <color name="tf_night_gray3">#B3B3B3</color>
+    <color name="tf_night_orange">#FF9E4A</color>
+</resources>

@@ -1,0 +1,57 @@
+<resources>
+    <string name="app_name">TaskFlow</string>
+    <string name="mock_api_url">https://67f972e3094de2fe6ea19818.mockapi.io/api</string>
+
+    <string name="tf_common_or_divider">or</string>
+
+    <string name="tf_main_text1">Login</string>
+    <string name="tf_main_text2">Email</string>
+    <string name="tf_main_text3">Password</string>
+    <string name="tf_main_edittext1">email@domain.com</string>
+    <string name="tf_main_button1">Continue</string>
+    <string name="tf_main_button2">Create Account</string>
+
+    <string name="tf_signup_text1">Create Account</string>
+    <string name="tf_signup_text2">Name</string>
+    <string name="tf_signup_text3">Mobile</string>
+    <string name="tf_signup_text4">Email</string>
+    <string name="tf_signup_text5">Password</string>
+    <string name="tf_signup_text6">Confirm Password</string>
+    <string name="tf_signup_edittext1">John Doe</string>
+    <string name="tf_signup_edittext2">07XXXXXXXX</string>
+    <string name="tf_signup_edittext3">email@domain.com</string>
+    <string name="tf_signup_edittext4">Use a strong password</string>
+    <string name="tf_signup_button1">Proceed</string>
+    <string name="tf_signup_button2">Go to Login</string>
+
+    <string name="tf_home_edittext1">Search tasks...</string>
+    <string name="tf_home_text1">No tasks found.</string>
+
+    <string name="tf_profile_text1">Profile</string>
+    <string name="tf_profile_text2">Name</string>
+    <string name="tf_profile_text3">Mobile</string>
+    <string name="tf_profile_text4">Email</string>
+    <string name="tf_profile_edittext1">John Doe</string>
+    <string name="tf_profile_edittext2">0761231234</string>
+    <string name="tf_profile_edittext4">john@email.com</string>
+    <string name="tf_profile_button1">Update</string>
+
+    <string name="tf_settings_text1">Settings</string>
+    <string name="tf_settings_button1">Dark Theme</string>
+    <string name="tf_settings_button2">Logout</string>
+
+    <string name="tf_newTask_text1">New Task</string>
+    <string name="tf_newTask_edittext2">Title</string>
+    <string name="tf_newTask_edittext3">Description</string>
+    <string name="tf_newTask_edittext4">Priority</string>
+    <string name="tf_newTask_edittext5">Due Date</string>
+    <string name="tf_newTask_button1">Save</string>
+    <string name="tf_newTask_button2">Low</string>
+    <string name="tf_newTask_button3">Medium</string>
+    <string name="tf_newTask_button4">High</string>
+
+    <string name="tf_taskCard_text1">Task Title is loading...</string>
+    <string name="tf_taskCard_text2">Task date is loading...</string>
+    <string name="tf_taskCard_button">View more...</string>
+
+</resources>

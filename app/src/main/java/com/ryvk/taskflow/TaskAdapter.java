@@ -3,6 +3,7 @@ package com.ryvk.taskflow;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -54,13 +55,15 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.ViewHolder> {
         String todayDate = Validation.todayDate();
         String tomorrowDate = Validation.tomorrowDate();
 
+        String taskDate = task.getDate();
+
         if(todayDate.equals(task.getDate())){
-            task.setDate("Today");
+            taskDate = "Today";
         }else if(tomorrowDate.equals(task.getDate())){
-            task.setDate("Tomorrow");
+            taskDate = "Tomorrow";
         }
 
-        holder.dateTextView.setText(task.getDate());
+        holder.dateTextView.setText(taskDate);
 
         if(task.getPriority() == Task.LOW_PRIORITY){
             holder.priority1.setVisibility(View.VISIBLE);

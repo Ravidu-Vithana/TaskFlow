@@ -13,8 +13,11 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 
 import java.io.IOException;
+import java.lang.reflect.Type;
+import java.util.List;
 
 import okhttp3.Call;
 import okhttp3.Callback;
@@ -103,34 +106,60 @@ public class SignUpActivity extends AppCompatActivity {
 
                 OkHttpClient client = new OkHttpClient();
 
-                RequestBody requestBody = RequestBody.create(gson.toJson(user), MediaType.get("application/json; charset=utf-8"));
-
-                // Create request
                 Request request = new Request.Builder()
-                        .url(MOCK_URL + "/users")
-                        .post(requestBody)
+                        .url(MOCK_URL + "/users?email="+user.getEmail())
+                        .addHeader("Content-Type","application/json")
                         .build();
 
                 new Thread(()->{
                     client.newCall(request).enqueue(new Callback() {
                         @Override
                         public void onFailure(Call call, IOException e) {
+                            runOnUiThread(AlertUtils::hideLoader);
                             e.printStackTrace();
                             System.out.println("Request Failed: " + e.getMessage());
-                            runOnUiThread(AlertUtils::hideLoader);
-                            runOnUiThread(()->AlertUtils.showAlert(SignUpActivity.this,"Error","Request Failed."));
+                            runOnUiThread(()->AlertUtils.showAlert(SignUpActivity.this,"Error","Request Failed!"));
                         }
 
                         @Override
                         public void onResponse(Call call, Response response) throws IOException {
                             runOnUiThread(AlertUtils::hideLoader);
                             if (response.isSuccessful()) {
-                                Intent i = new Intent(SignUpActivity.this, HomeActivity.class);
-                                startActivity(i);
-                                finish();
+                                runOnUiThread(()->AlertUtils.showAlert(SignUpActivity.this,"Error","A user with the same email already exists!"));
                             } else {
                                 System.out.println("Error: " + response.code());
-                                runOnUiThread(()->AlertUtils.showAlert(SignUpActivity.this,"Error","Request Failed."));
+                                if(response.code() == 404){
+                                    RequestBody requestBody = RequestBody.create(gson.toJson(user), MediaType.get("application/json; charset=utf-8"));
+
+                                    // Create request
+                                    Request request2 = new Request.Builder()
+                                            .url(MOCK_URL + "/users")
+                                            .post(requestBody)
+                                            .build();
+
+                                    client.newCall(request2).enqueue(new Callback() {
+                                        @Override
+                                        public void onFailure(Call call, IOException e) {
+                                            e.printStackTrace();
+                                            System.out.println("Request Failed: " + e.getMessage());
+                                            runOnUiThread(AlertUtils::hideLoader);
+                                            runOnUiThread(()->AlertUtils.showAlert(SignUpActivity.this,"Error","Request Failed."));
+                                        }
+
+                                        @Override
+                                        public void onResponse(Call call, Response response) throws IOException {
+                                            runOnUiThread(AlertUtils::hideLoader);
+                                            if (response.isSuccessful()) {
+                                                Intent i = new Intent(SignUpActivity.this, HomeActivity.class);
+                                                startActivity(i);
+                                                finish();
+                                            } else {
+                                                System.out.println("Error: " + response.code());
+                                                runOnUiThread(()->AlertUtils.showAlert(SignUpActivity.this,"Error","Request Failed."));
+                                            }
+                                        }
+                                    });
+                                }
                             }
                         }
                     });

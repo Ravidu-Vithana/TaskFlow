@@ -61,8 +61,10 @@ public class SignUpActivity extends AppCompatActivity {
                 errorExists = true;
             }else if(!Validation.isInteger(mobileField.getText().toString())){
                 mobileField.setError("Mobile must be an integer");
-            }else if(mobileField.getText().toString().length() == 10){
+                errorExists = true;
+            }else if(mobileField.getText().toString().length() != 10){
                 mobileField.setError("Mobile must have 10 digits");
+                errorExists = true;
             }
             if(emailField.getText().toString().isBlank()){
                 emailField.setError("Email is required");
@@ -82,6 +84,7 @@ public class SignUpActivity extends AppCompatActivity {
             if(!passwordField.getText().toString().equals(conPasswordField.getText().toString())){
                 passwordField.setError("Passwords do not match");
                 conPasswordField.setError("Passwords do not match");
+                errorExists = true;
             }
 
             if(!errorExists){

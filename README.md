@@ -25,6 +25,7 @@ The project uses a pre-configured base URL from [mockAPI.io](https://mockapi.io/
 Endpoints used;
   1. users
   2. tasks
+
 No additional setup is required — clone and run!
 
 ---
